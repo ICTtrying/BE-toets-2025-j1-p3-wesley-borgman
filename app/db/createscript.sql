@@ -293,4 +293,73 @@ VALUES
  ('JBL Charge 5', 20,'IP67 (stof- en waterdicht)', 'Bluetooth 5.1', 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('Bose SoundLink Flex', 12, 'IP67 (water- en stofdicht)', 'Bluetooth 4.2', 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('Sony SRS-XB43', 24, 'IP67 (water-, stof- en roestbestendig)', 'Bluetooth 5.0, NFC', 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Ultimate Ears (UE) Boom 3', 15, 'IP67 (waterdicht en drijvend!)', 'Bluetooth 5.0', 1, NULL, SYSDATE(6), SYSDATE(6));
+('Ultimate Ears (UE) Boom 3', 15, 'IP67 (waterdicht en drijvend!)', 'Bluetooth 5.0', 1, NULL, SYSDATE(6), SYSDATE(6));
+ 
+CREATE table Bucketlist (
+     Id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT
+     ,Activiteit VARCHAR(50) NOT NULL
+     ,begintijd TIME NOT NULL
+     ,eindtijd TIME NOT NULL
+     ,IsActief BIT NOT NULL DEFAULT 1
+     ,Opmerking VARCHAR(255) NULL DEFAULT NULL
+     ,DatumAangemaakt DATETIME(6) NOT NULL
+     ,DatumGewijzigd DATETIME(6) NOT NULL
+     ,CONSTRAINT PK_Bucketlist_Id PRIMARY KEY CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+INSERT INTO Bucketlist
+(
+      Activiteit
+     ,begintijd
+     ,eindtijd
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+) VALUES ('Bungeejumpen', '10:00:00', '11:00:00', 1, NULL, SYSDATE(6), SYSDATE(6)),
+('Parachutespringen', '12:00:00', '13:00:00', 1, NULL, SYSDATE(6), SYSDATE(6)),
+('Zwemmen met dolfijnen', '14:00:00', '15:00:00', 1, NULL, SYSDATE(6), SYSDATE(6)),
+('Rondvlucht in een helikopter', '16:00:00', '17:00:00', 1, NULL, SYSDATE(6), SYSDATE(6));
+
+CREATE TABLE Zangers
+(
+     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
+    ,Naam               VARCHAR(50)                 NOT NULL
+    ,Nettowaarde        SMALLINT        UNSIGNED    NOT NULL
+    ,Land               VARCHAR(50 )                NOT NULL
+    ,Mobiel             VARCHAR(30)                 NOT NULL
+    ,Leeftijd           TINYINT         UNSIGNED    NOT NULL
+    ,IsActief           BIT                         NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,CONSTRAINT         PK_Zangeres_Id              PRIMARY KEY     CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+-- Step: 13
+-- *****************************************************************
+-- Doel : Vul de tabel Zangeres met gegevens
+-- *****************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           18-3-2025      Arjan de Ruijter     Vulling Zangeres
+-- *****************************************************************
+
+INSERT INTO Zangers
+(
+      Naam
+     ,Nettowaarde
+     ,Land
+     ,Mobiel
+     ,Leeftijd
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+)
+VALUES
+  ('Rihanna', 1400,'Barbados', '+1246 2400 1862400', 36, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Madonna', 575,'Verenigde Staten', '+13425 182345', 65, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Taylor Swift', 570,'Verenigde Staten', '+13421 231356', 34, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Beyoncé', 420,'Verenigde Staten', '+18723 213481', 41, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Jennifer Lopez', 400,'Verenigde Staten', '+16254 751243', 54, 1, NULL, SYSDATE(6), SYSDATE(6));

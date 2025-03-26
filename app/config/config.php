@@ -11,7 +11,7 @@ define('DB_PASS', '');
 /**
  * De naam van de virtualhost
  */
-define('URLROOT', 'http://www.mvc-startertemplate-2408a.nl');
+define('URLROOT', 'http://crud-php-mysql');
 
 /**
  * Het pad naar de folder app
