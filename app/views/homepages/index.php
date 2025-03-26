@@ -17,7 +17,7 @@
             <a href="<?= URLROOT; ?>/Speakers/index">Overzicht Speakers</a> |
             <a href="<?= URLROOT; ?>/Bucketlist/index">Overzicht Bucketlist</a> |
             <a href="<?= URLROOT; ?>/Zangers/index">Overzicht Zangers</a> |
-            <a href="<?= URLROOT; ?>/Zangers/index">Overzicht Zangers</a> |
+            <a href="<?= URLROOT; ?>/UFC/index">UFC men's pound for pound</a> |
         </div>
         
         <div class="col-2"></div>
